@@ -14,6 +14,8 @@ urlpatterns = [
 
 router.register('user', views.UserView)
 router.register('student', views.StudentView)
+router.register('teacher', views.TeacherView)
+router.register('teacher_student', views.TeacherStudentView)
 
 
 urlpatterns += router.urls
