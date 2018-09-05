@@ -3,3 +3,4 @@ from .student import Student
 from .teacher import Teacher
 from .teacher_student import TeacherStudent
 from .subject import Subject
+from .lesson import Lesson
