@@ -1,1 +1,2 @@
 from .user_serializer import UserSerializer
+from .student_serializer import StudentSerializer
