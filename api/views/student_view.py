@@ -14,9 +14,9 @@ class StudentView(viewsets.ModelViewSet):
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
 
-    def get_queryset(self):
-        if self.kwargs['get_single_user']:
-            queryset = Student.objects.filter(user=request.user)
+    def get_queryset(self, *args, **kwargs):
+        if self.request.query_params.get('get_single_user', False):
+            queryset = Student.objects.filter(user=self.request.user)
         else:
             queryset = Student.objects.all()
 

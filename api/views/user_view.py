@@ -6,9 +6,9 @@ class UserView(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
 
-    def get_queryset(self):
-        if self.kwargs['get_single_user']:
-            queryset = request.user
+    def get_queryset(self, *args, **kwargs):
+        if self.request.query_params.get('get_single_user', False):
+            queryset = [self.request.user]
         else:
             queryset = User.objects.all()
 
