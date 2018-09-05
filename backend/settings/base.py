@@ -44,7 +44,12 @@ INSTALLED_APPS = [
 ]
 
 CORS_ORIGIN_WHITELIST = (
-    '*'
+    'localhost:8080',
+    'localhost:3000',
+    '127.0.0.1:8080',
+    '127.0.0.1:3000',
+    '127.0.0.1:3001',
+    'localhost:3001',
 )
 
 AUTH_USER_MODEL = 'api.User'
