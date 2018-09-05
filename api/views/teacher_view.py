@@ -15,3 +15,11 @@ class TeacherView(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def get_queryset(self):
+        if self.kwargs['get_single_user']:
+            queryset = models.Teacher.objects.filter(user=request.user)
+        else:
+            queryset = models.Teacher.objects.all()
+
+        return queryset

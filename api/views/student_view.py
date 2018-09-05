@@ -13,3 +13,11 @@ class StudentView(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(user=request.user)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def get_queryset(self):
+        if self.kwargs['get_single_user']:
+            queryset = Student.objects.filter(user=request.user)
+        else:
+            queryset = Student.objects.all()
+
+        return queryset
