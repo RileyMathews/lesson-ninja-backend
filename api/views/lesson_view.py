@@ -13,3 +13,11 @@ class LessonView(viewsets.ModelViewSet):
         serializer.is_valid(raise_exception=True)
         serializer.save(teacher=request.user.teacher)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    def get_queryset(self):
+        if self.request.query_params.get('filter_by_auth', False):
+            queryset = Lesson.objects.filter(teacher = self.request.user.teacher)
+        else:
+            queryset = Lesson.objects.all()
+
+        return queryset
