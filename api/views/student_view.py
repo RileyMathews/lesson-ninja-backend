@@ -17,6 +17,10 @@ class StudentView(viewsets.ModelViewSet):
     def get_queryset(self, *args, **kwargs):
         if self.request.query_params.get('get_single_user', False):
             queryset = Student.objects.filter(user=self.request.user)
+        elif self.request.query_params.get('username', ''):
+            search_terms = self.request.query_params.get('username', '')
+            queryset = Student.objects.all()
+            queryset = [student for student in queryset if search_terms in student.user.username]
         else:
             queryset = Student.objects.all()
 
