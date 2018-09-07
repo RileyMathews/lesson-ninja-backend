@@ -9,8 +9,11 @@ class StudentLessonView(viewsets.ModelViewSet):
     def get_queryset(self):
         current_user = self.request.user
         if current_user.is_teacher:
-            print("teacher")
-            queryset = StudentLesson.objects.filter(teacher=current_user.teacher)
+            print(current_user.teacher)
+            teachers_lessons = current_user.teacher.lesson_set.all()
+            print(teachers_lessons)
+            queryset = StudentLesson.objects.all()
+            queryset = [assignment for assignment in queryset if assignment.lesson in teachers_lessons]
         elif current_user.is_student:
             print("student")
             print(current_user.student)
