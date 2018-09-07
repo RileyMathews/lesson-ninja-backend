@@ -5,3 +5,4 @@ from .teacher_student_serializer import TeacherStudentSerializer
 from .subject_serializer import SubjectSerializer
 from .lesson_serializer import LessonSerializer
 from .student_lesson_serializer import StudentLessonSerializer
+from .student_lesson_read_serializer import StudentLessonReadSerializer
