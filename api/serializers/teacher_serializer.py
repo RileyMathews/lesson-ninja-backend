@@ -1,9 +1,10 @@
 from rest_framework import serializers
-from api.serializers import UserSerializer
+from api.serializers import UserSerializer, StudentSerializer
 from api.models import Teacher
 
 class TeacherSerializer(serializers.HyperlinkedModelSerializer):
     user = UserSerializer(read_only=True)
+    students = StudentSerializer(read_only=True, many=True)
 
     class Meta:
         model = Teacher
