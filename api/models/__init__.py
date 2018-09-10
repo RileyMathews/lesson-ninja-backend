@@ -6,3 +6,4 @@ from .subject import Subject
 from .lesson import Lesson
 from .student_lesson import StudentLesson
 from .document import Document
+from .lesson_document import LessonDocument
