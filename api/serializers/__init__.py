@@ -6,3 +6,4 @@ from .subject_serializer import SubjectSerializer
 from .lesson_serializer import LessonSerializer
 from .student_lesson_serializer import StudentLessonSerializer
 from .student_lesson_read_serializer import StudentLessonReadSerializer
+from .document_serializer import DocumentSerializer
