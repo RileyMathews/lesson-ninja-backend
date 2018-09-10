@@ -25,7 +25,7 @@ SECRET_KEY = '&mszoidtgbj&d$j(j*+%d(4s=1$nou5him6+p#!$d=07*8$0o$'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["142.93.23.116"]
 
 
 # Application definition
@@ -50,6 +50,7 @@ CORS_ORIGIN_WHITELIST = (
     '127.0.0.1:3000',
     '127.0.0.1:3001',
     'localhost:3001',
+    'lesson.ninja',
 )
 
 AUTH_USER_MODEL = 'api.User'
@@ -144,3 +145,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, '../static')

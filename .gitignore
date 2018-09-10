@@ -3,3 +3,4 @@ migrations
 *.pyc
 .DS_Store
 .vscode
+static
