@@ -1,6 +1,8 @@
 from rest_framework import viewsets
 from api.models import Document
 from api.serializers import DocumentSerializer
+from rest_framework import status
+from rest_framework.response import Response
 
 class DocumentView(viewsets.ModelViewSet):
     queryset = Document.objects.all()
