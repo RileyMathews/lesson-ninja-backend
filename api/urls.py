@@ -20,6 +20,7 @@ router.register('subject', views.SubjectView)
 router.register('lesson', views.LessonView)
 router.register('student_lesson', views.StudentLessonView)
 router.register('document', views.DocumentView)
+router.register('lesson_document', views.LessonDocumentView)
 
 
 urlpatterns += router.urls
