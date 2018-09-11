@@ -12,4 +12,4 @@ class StudentLessonReadSerializer(serializers.HyperlinkedModelSerializer):
             'has_opened',
             'finished_on',
         )
-        depth=1
+        depth=2
