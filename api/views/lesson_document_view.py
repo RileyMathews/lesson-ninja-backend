@@ -12,6 +12,7 @@ class LessonDocumentView(viewsets.ModelViewSet):
         lesson = self.request.query_params.get("lesson", None)
         document = self.request.query_params.get("document", None)
         # filter off those parameters
-        queryset = [item for item in queryset if item.lesson.id == int(lesson) and item.document.id == int(document)]
+        if lesson and document:
+            queryset = [item for item in queryset if item.lesson.id == int(lesson) and item.document.id == int(document)]
         # return queryset
         return queryset
