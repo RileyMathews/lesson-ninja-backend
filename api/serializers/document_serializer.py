@@ -10,6 +10,8 @@ class DocumentSerializer(serializers.HyperlinkedModelSerializer):
             'id',
             'url',
             's3_url',
+            's3_key',
+            'file_extension',
             'name',
             'notes',
             # 'teacher'
