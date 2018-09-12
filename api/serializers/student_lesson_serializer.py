@@ -17,7 +17,5 @@ class StudentLessonSerializer(serializers.HyperlinkedModelSerializer):
         )
 
     def to_representation(self, instance):
-        print(self)
-        print(instance)
         serializer = StudentLessonReadSerializer(instance, context=self.context)
         return serializer.data
