@@ -4,3 +4,4 @@ migrations
 .DS_Store
 .vscode
 static
+environment.json
