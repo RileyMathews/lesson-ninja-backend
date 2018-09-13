@@ -20,10 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 
-
-ALLOWED_HOSTS = ["142.93.23.116", "127.0.0.1"]
-
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,15 +35,6 @@ INSTALLED_APPS = [
     'api',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'localhost:8080',
-    'localhost:3000',
-    '127.0.0.1:8080',
-    '127.0.0.1:3000',
-    '127.0.0.1:3001',
-    'localhost:3001',
-    'lesson.ninja',
-)
 
 AUTH_USER_MODEL = 'api.User'
 
@@ -93,15 +80,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'backend.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, '../db.sqlite3'),
-    }
-}
 
 
 # Password validation
