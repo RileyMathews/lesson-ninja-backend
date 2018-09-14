@@ -5,7 +5,7 @@ DEBUG = False
 
 CORS_ORIGIN_WHITELIST = ('lesson.ninja')
 
-ALLOWED_HOSTS = ["142.93.23.116"]
+ALLOWED_HOSTS = ["api.lesson.ninja"]
 
 
 # Database
