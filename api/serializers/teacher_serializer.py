@@ -10,6 +10,7 @@ class TeacherSerializer(serializers.HyperlinkedModelSerializer):
         model = Teacher
         fields = (
             'id',
+            'connection_key',
             'url',
             'bio',
             'street',

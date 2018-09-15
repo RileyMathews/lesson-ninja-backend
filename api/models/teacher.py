@@ -1,8 +1,10 @@
 from django.db import models
 from .user import User
 from .student import Student
+import uuid
 
 class Teacher(models.Model):
+    connection_key = models.CharField(max_length=255, unique=True, default=uuid.uuid4())
     bio = models.CharField(max_length=500, blank=True)
     street = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)

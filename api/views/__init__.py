@@ -8,3 +8,4 @@ from .lesson_view import LessonView
 from .student_lesson_view import StudentLessonView
 from .document_view import DocumentView
 from .lesson_document_view import LessonDocumentView
+from .student_connection_view import connection_view
