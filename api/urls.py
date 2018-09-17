@@ -10,7 +10,7 @@ urlpatterns = [
     path('auth/register/', views.register_user),
     path('auth/login/', obtain_auth_token),
     path('connect/', views.connection_view),
-    path('auth/change_password', views.change_password),
+    path('auth/change_password/', views.change_password),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
