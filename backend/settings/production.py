@@ -21,3 +21,10 @@ DATABASES = {
         'PORT': '',
     }
 }
+
+EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
+EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
+EMAIL_PORT = 465
+EMAIL_HOST_USER = 'noreply@lesson.ninja'
+EMAIL_HOST_PASSWORD = 'Di!G3QCt66iLVA'
+EMAIL_USE_TLS = True

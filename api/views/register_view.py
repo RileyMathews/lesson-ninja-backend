@@ -5,6 +5,8 @@ from api.models import User
 from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
 
+from django.core.mail import send_mail
+
 @csrf_exempt
 def register_user(request):
     """Handles the creation of a new user for authentication
@@ -33,7 +35,7 @@ def register_user(request):
     if errors_found:
         response = json.dumps(errors)
     else:
-        # make new user
+        make new user
         new_user = User.objects.create_user(
             username=req_body['username'],
             password=req_body['password'],
@@ -46,6 +48,14 @@ def register_user(request):
         token = Token.objects.create(user=new_user)
 
         response = json.dumps({"token": token.key})
+
+        send_mail(
+            "Welcome to Lesson Ninja", 
+            "Welcome to Lesson Ninja.",
+            "noreply@lesson.ninja",
+            [new_user.email],
+            fail_silently=False
+        )
 
 
     return HttpResponse(response, content_type='application/json')

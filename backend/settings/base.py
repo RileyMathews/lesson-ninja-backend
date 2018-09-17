@@ -36,6 +36,9 @@ INSTALLED_APPS = [
 ]
 
 
+
+
+
 AUTH_USER_MODEL = 'api.User'
 
 REST_FRAMEWORK = {
