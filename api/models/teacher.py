@@ -1,6 +1,7 @@
 from django.db import models
 from .user import User
 from .student import Student
+from random import randint
 import uuid
 
 class Teacher(models.Model):
@@ -16,3 +17,8 @@ class Teacher(models.Model):
 
     def __str__(self):
         return f'teacher {self.user}'
+
+    def generate_key(self):
+        number = randint(1000, 9999)
+        key = f'{self.user.username}#{number}'
+        self.connection_key = key

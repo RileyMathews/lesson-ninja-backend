@@ -22,3 +22,11 @@ class TeacherSerializer(serializers.HyperlinkedModelSerializer):
             'students'
         )
         depth = 1
+
+    def create(self, validated_data):
+
+        teacher = Teacher.objects.create(**validated_data)
+        teacher.generate_key()
+        teacher.save()
+
+        return teacher
