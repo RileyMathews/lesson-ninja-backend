@@ -7,3 +7,4 @@ from .lesson import Lesson
 from .student_lesson import StudentLesson
 from .document import Document
 from .lesson_document import LessonDocument
+from .password_reset_code import PasswordResetCode

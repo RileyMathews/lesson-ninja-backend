@@ -10,3 +10,5 @@ from .document_view import DocumentView
 from .lesson_document_view import LessonDocumentView
 from .student_connection_view import connection_view
 from .change_password import change_password
+from .forgot_password import forgot_password
+from .reset_password import reset_password
