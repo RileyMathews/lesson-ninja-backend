@@ -35,7 +35,7 @@ def register_user(request):
     if errors_found:
         response = json.dumps(errors)
     else:
-        make new user
+        # make new user
         new_user = User.objects.create_user(
             username=req_body['username'],
             password=req_body['password'],
@@ -50,7 +50,7 @@ def register_user(request):
         response = json.dumps({"token": token.key})
 
         send_mail(
-            "Welcome to Lesson Ninja", 
+            f"Welcome {req_body['first_name']}", 
             "Welcome to Lesson Ninja.",
             "noreply@lesson.ninja",
             [new_user.email],
