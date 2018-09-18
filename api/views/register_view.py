@@ -6,6 +6,8 @@ from rest_framework.authtoken.models import Token
 from django.views.decorators.csrf import csrf_exempt
 
 from django.core.mail import send_mail
+from django.core.validators import validate_email, validate_unicode_slug
+from django.core.exceptions import ValidationError
 
 @csrf_exempt
 def register_user(request):
@@ -30,6 +32,18 @@ def register_user(request):
     if email_check:
         errors["email"] = "This email is already in use"
         errors_found = True
+
+    try:
+        validate_email(req_body['email'])
+    except ValidationError:
+        errors_found = True
+        errors["email"] = "Please enter a valid email address"
+
+    try:
+        validate_unicode_slug(req_body['username'])
+    except ValidationError:
+        errors_found = True
+        errors["username"] = "please enter a valid username"
     
 
     if errors_found:
