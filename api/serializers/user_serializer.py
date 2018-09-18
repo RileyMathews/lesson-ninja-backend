@@ -18,7 +18,6 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
 
     def update(self, instance, validated_data):
         if instance.is_teacher and instance.username != validated_data.get('username'):
-            print("got here")
             instance.username = validated_data.get('username')
             instance.save()
             teacher = instance.teacher
@@ -29,6 +28,4 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         instance.last_name = validated_data.get("last_name")
         instance.email = validated_data.get("email")
         instance.save()
-        print(instance.username)
-        print(validated_data.get('username'))
         return instance

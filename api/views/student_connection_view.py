@@ -19,7 +19,6 @@ def connection_view(request):
         student = current_user.student
 
         connection_exists = teacher in student.teacher_set.all()
-        print(connection_exists)
         if teacher in student.teacher_set.all():
             response = json.dumps({"error": "You're already connected"})
         else:
