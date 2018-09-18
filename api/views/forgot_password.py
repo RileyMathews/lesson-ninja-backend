@@ -36,12 +36,13 @@ def forgot_password(request):
     
 
     if not errors_found:
-        # generate a reset code that is attached to that user
-        if current_user.reset_code:
-            current_user.reset_code.delete()
+        # check for current code
+        current_code = [code for code in PasswordResetCode.objects.all() if code.user == current_user]
+        if len(current_code) == 0:
+            # generate a reset code that is attached to that user
             reset_code = PasswordResetCode.objects.create(user=current_user)
         else:
-            reset_code = PasswordResetCode.objects.create(user=current_user)
+            reset_code = current_code[0]
 
         # generate an email body with the code in it and instructions on how to reset it.
         email_body = f"This password was sen't because a user requested a reset of the password for the account attached to this email. If you did not request this reset please ignore this email. Otherwise you can visit https://lesson.ninja/reset and follow the instructions to reset your password. Your password reset key is {reset_code}"
