@@ -11,6 +11,7 @@ class TeacherSerializer(serializers.HyperlinkedModelSerializer):
         fields = (
             'id',
             'connection_key',
+            's3_user_key',
             'url',
             'bio',
             'street',

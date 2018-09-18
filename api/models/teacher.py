@@ -6,6 +6,7 @@ import uuid
 
 class Teacher(models.Model):
     connection_key = models.CharField(max_length=255, unique=True, default=uuid.uuid4())
+    s3_user_key = models.CharField(max_length=255, unique=True, default=uuid.uuid4())
     bio = models.CharField(max_length=500, blank=True)
     street = models.CharField(max_length=255, blank=True)
     city = models.CharField(max_length=255, blank=True)
