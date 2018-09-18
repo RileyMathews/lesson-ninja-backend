@@ -43,7 +43,7 @@ def reset_password(request):
     # make sure code matches their code
     if not errors_found:
         # check for code
-        user_code = [code for code in PasswordResetCode.objects.all() if code.user == user]
+        user_code = [code for code in PasswordResetCode.objects.all() if code.user == current_user]
         if len(user_code) != 0:
             if str(current_user.reset_code) == str(code):
                 # reset password to new password
