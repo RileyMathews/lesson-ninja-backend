@@ -65,8 +65,8 @@ def register_user(request):
 
         send_mail(
             f"Welcome {req_body['first_name']}", 
-            "Welcome to Lesson Ninja.",
             "Welcome to lesson Ninja! And thank you for trying this out. If you have any questions, concerns, or comments feel free to reach out to me at contact@lesson.ninja. Happy Learning!",
+            "noreply@lesson.ninja",
             [new_user.email],
             fail_silently=False
         )
