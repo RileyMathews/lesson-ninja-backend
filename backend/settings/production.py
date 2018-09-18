@@ -14,11 +14,11 @@ ALLOWED_HOSTS = ["api.lesson.ninja"]
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lessonninja',
+        'NAME': 'lessonninjadatabase',
         'USER': 'rileymathews',
         'PASSWORD': 'nerdrage132',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': 'lesson-ninja-production.crodkqxlfhxs.us-east-2.rds.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
