@@ -9,10 +9,10 @@ router = DefaultRouter()
 urlpatterns = [
     path('auth/register/', views.register_user),
     path('auth/login/', obtain_auth_token),
-    path('connect/', views.connection_view),
     path('auth/change_password/', views.change_password),
     path('auth/forgot_password/', views.forgot_password),
     path('auth/reset_password/', views.reset_password),
+    path('connect/', views.connection_view),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
 
