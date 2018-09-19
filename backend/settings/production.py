@@ -11,16 +11,7 @@ ALLOWED_HOSTS = ["api.lesson.ninja"]
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'lessonninjadatabase',
-        'USER': 'rileymathews',
-        'PASSWORD': 'nerdrage132',
-        'HOST': 'lesson-ninja-production.crodkqxlfhxs.us-east-2.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+
 
 EMAIL_BACKEND = 'django_smtp_ssl.SSLEmailBackend'
 EMAIL_HOST = 'smtp.mail.us-east-1.awsapps.com'
