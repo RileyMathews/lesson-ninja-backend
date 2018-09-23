@@ -14,7 +14,7 @@ class LessonDocumentSerializer(serializers.HyperlinkedModelSerializer):
 
         validators = [
             UniqueTogetherValidator(
-                queryset=StudentLesson.objects.all(),
-                fields=('student', 'lesson')
+                queryset=LessonDocument.objects.all(),
+                fields=('lesson', 'document')
             )
         ]
