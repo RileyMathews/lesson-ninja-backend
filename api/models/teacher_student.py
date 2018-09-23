@@ -7,5 +7,8 @@ class TeacherStudent(models.Model):
     student = models.ForeignKey(Student, on_delete=models.CASCADE)
     confirmed = models.BooleanField()
 
+    class Meta:
+        unique_together = (("teacher", "student"),)
+
     def __str__(self):
         return f'{self.teacher.user.first_name} teaching {self.student.user.first_name}'

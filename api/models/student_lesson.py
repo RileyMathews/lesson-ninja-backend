@@ -7,3 +7,6 @@ class StudentLesson(models.Model):
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE)
     has_opened = models.BooleanField()
     finished_on = models.DateField(blank=True, null=True)
+
+    class Meta:
+        unique_together = (("lesson", "student"),)
