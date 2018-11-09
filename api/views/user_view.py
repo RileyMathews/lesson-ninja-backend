@@ -9,9 +9,6 @@ class UserView(viewsets.ModelViewSet):
     permission_classes = (IsAuthenticated,)
 
     def get_queryset(self, *args, **kwargs):
-        if self.request.query_params.get('get_single_user', False):
-            queryset = [self.request.user]
-        else:
-            queryset = User.objects.all()
+        queryset = [self.request.user]
 
         return queryset
