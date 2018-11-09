@@ -3,10 +3,12 @@ from api.models import Document
 from api.serializers import DocumentSerializer
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 class DocumentView(viewsets.ModelViewSet):
     queryset = Document.objects.all()
     serializer_class = DocumentSerializer
+    permission_classes = (IsAuthenticated,)
 
     def create(self, request):
         serializer = DocumentSerializer(data=request.data, context={'request': request})

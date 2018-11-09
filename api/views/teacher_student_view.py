@@ -1,10 +1,12 @@
 from rest_framework import viewsets
 from api.models import TeacherStudent
 from api.serializers import TeacherStudentSerializer
+from rest_framework.permissions import IsAuthenticated
 
 class TeacherStudentView(viewsets.ModelViewSet):
     queryset = TeacherStudent.objects.all()
     serializer_class = TeacherStudentSerializer
+    permission_classes = (IsAuthenticated,)
 
     def get_queryset(self):
         queryset = TeacherStudent.objects.all()

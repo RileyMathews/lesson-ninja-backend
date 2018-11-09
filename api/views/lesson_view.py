@@ -3,10 +3,12 @@ from api.models import Lesson
 from api.serializers import LessonSerializer
 from rest_framework import status
 from rest_framework.response import Response
+from rest_framework.permissions import IsAuthenticated
 
 class LessonView(viewsets.ModelViewSet):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
+    permission_classes = (IsAuthenticated,)
 
     def create(self, request):
         serializer = LessonSerializer(data=request.data, context={'request': request})
